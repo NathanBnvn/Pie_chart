@@ -4,10 +4,9 @@ project(pie_chart LANGUAGES C)
 
 find_package(gd)
 add_executable(pie_chart main.c)
+target_link_libraries(pie_chart gd)
 
 include(GNUInstallDirs)
-include_directories(/opt/homebrew/Cellar/gd/2.3.3_5/include/)
-link_directories(/opt/homebrew/Cellar/gd/2.3.3_5/lib/libgd.3.dylib)
 
 install(TARGETS pie_chart
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
